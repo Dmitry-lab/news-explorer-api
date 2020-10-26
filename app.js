@@ -40,7 +40,7 @@ app.use((req, res, next) => next(new NotFoundError('Запрашиваемый �
 app.use(errors());
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
-  const errJSON = statusCode === 500 ? { message: `Ошибка сервера ${err}` } : { message };
+  const errJSON = statusCode === 500 ? { message: 'Ошибка сервера.' } : { message };
   res.status(statusCode).send(errJSON);
   next();
 });

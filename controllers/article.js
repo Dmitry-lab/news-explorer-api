@@ -34,7 +34,7 @@ module.exports.saveArticle = (req, res, next) => {
     .then(() => res.send({ data: { keyword, title, text, date, source, link, image } }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new RequestError(`Ошибка сохранения статьи ${err} Проверьте корректность переданных данных.`));
+        next(new RequestError('Ошибка сохранения статьи. Проверьте корректность переданных данных.'));
       } else {
         next(err);
       }
