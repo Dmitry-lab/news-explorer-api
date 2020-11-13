@@ -15,6 +15,10 @@ const NotFoundError = require('./errors/notfound-error');
 const app = express();
 const { PORT = 3000, NODE_ENV, CONNECTION_STRING } = process.env;
 const dbConnectionString = NODE_ENV === 'production' ? CONNECTION_STRING : 'mongodb://localhost:27017/newsprojectdb';
+const options = {
+  origin: ['http://localhost:3000', 'https://newsprj.students.nomoreparties.space'],
+  credentials: true,
+};
 
 mongoose.connect(dbConnectionString, {
   useNewUrlParser: true,
@@ -23,7 +27,7 @@ mongoose.connect(dbConnectionString, {
   useUnifiedTopology: true,
 });
 
-app.use(cors());
+app.use(cors(options));
 app.use(limiter);
 app.use(helmet());
 app.use(bodyParser.json());
