@@ -55,7 +55,8 @@ module.exports.login = (req, res, next) => {
         { expiresIn: '7d' },
       );
 
-      res.cookie('jwt', token, { httpOnly: true }).end();
+      res.send({ token });
+      // res.cookie('jwt', token, { httpOnly: true }).end();
     })
     .catch(next);
 };
