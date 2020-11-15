@@ -16,7 +16,7 @@ const app = express();
 const { PORT = 3000, NODE_ENV, CONNECTION_STRING } = process.env;
 const dbConnectionString = NODE_ENV === 'production' ? CONNECTION_STRING : 'mongodb://localhost:27017/newsprojectdb';
 const options = {
-  origin: ['http://localhost:3000', 'https://newsprj.students.nomoreparties.space'],
+  origin: '*',
   credentials: true,
 };
 
