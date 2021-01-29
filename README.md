@@ -17,6 +17,6 @@
 
 #### Доступ к ресурсам
 
-1. IP-адрес сервера: 84.201.152.195
-2. Имя домена: newsprj.students.nomoreparties.co
+1. IP-адрес сервера: 130.193.42.83
+2. Имя домена: newsprj.students.nomoreparties.space
 
