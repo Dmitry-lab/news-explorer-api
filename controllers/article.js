@@ -31,7 +31,7 @@ module.exports.saveArticle = (req, res, next) => {
     image,
     owner: req.user._id,
   })
-    .then(() => res.send({ data: { keyword, title, text, date, source, link, image } }))
+    .then((card) => res.send({ card }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new RequestError('Ошибка сохранения статьи. Проверьте корректность переданных данных.'));
